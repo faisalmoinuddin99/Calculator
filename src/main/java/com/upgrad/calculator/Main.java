@@ -12,7 +12,7 @@ public class Main {
         Calculator calculator = (Calculator) context.getBean("calculator") ;
 
         Scanner sc = new Scanner(System.in) ;
-        System.out.println("Operation (add,sub)");
+        System.out.println("Operation (add,sub,mul)");
         String op = sc.next();
         System.out.println("X: ");
         int x = sc.nextInt() ;

@@ -16,12 +16,20 @@ public class Calculator {
     @Qualifier("subtractionService")
     private MathService subtractionService ;
 
+    @Autowired
+    @Qualifier("multiplicationService")
+    private MathService multiplicationService ;
+
     public int compute(String op, int a, int b){
         if (op.equals("add")){
             return this.additionService.operate(a,b) ;
         }else if(op.equals("sub")){
             return this.subtractionService.operate(a,b) ;
-        }else{
+        }
+        else if(op.equals("mul")){
+            return this.multiplicationService.operate(a,b) ;
+        }
+        else{
             throw new RuntimeException(op + "Not supported") ;
         }
     }
